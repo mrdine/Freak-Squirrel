@@ -7,9 +7,15 @@ public class player : MonoBehaviour {
     private float vel = 5f;
     private float fall = 0f;
 
+    public GameObject avela;
 
-	// Use this for initialization
-	void Start () {
+    //Para tempo do tiro
+    public float fireRate = 0.4f;
+    private float nextFire;
+
+
+    // Use this for initialization
+    void Start () {
         fall = 0f;
 	}
 	
@@ -36,6 +42,13 @@ public class player : MonoBehaviour {
         fall -= 0.02f;
         */
 
+        movePlayer();
+        atirar();
+
+    }
+
+    void movePlayer()
+    {
         //Entradas do teclado para controlar o personagem
         if (Input.GetKey(KeyCode.W))
         {
@@ -47,12 +60,25 @@ public class player : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(-vel * Time.deltaTime , 0, 0));
+            transform.Translate(new Vector3(-vel * Time.deltaTime, 0, 0));
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector3(vel * Time.deltaTime, 0, 0));
         }
+    }
 
+
+    void atirar()
+    {
+        //Tiro padrão
+        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(avela, new Vector3(transform.position.x + 0.5f, transform.position.y - 0.25f, transform.position.z), transform.rotation);
+        }
+        
     }
 }
+
+

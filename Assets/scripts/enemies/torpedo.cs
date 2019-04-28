@@ -14,5 +14,12 @@ public class torpedo : MonoBehaviour {
 	void Update () {
 
         transform.Translate(new Vector3(-vel * Time.deltaTime, 0, 0));
+
+        //Destruir
+        if(transform.position.x <= -10)
+        {
+            Destroy(this.gameObject);
+        }
 	}
+
 }

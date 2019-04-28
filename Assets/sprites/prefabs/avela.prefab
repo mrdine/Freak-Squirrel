@@ -9,82 +9,93 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1805017583777250}
+  m_RootGameObject: {fileID: 1066020854111658}
   m_IsPrefabParent: 1
---- !u!1 &1805017583777250
+--- !u!1 &1066020854111658
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4543229212085152}
-  - component: {fileID: 212177495572313206}
-  - component: {fileID: 61175202453908318}
-  - component: {fileID: 114931775489510256}
+  - component: {fileID: 4253479129267378}
+  - component: {fileID: 212316884057593884}
+  - component: {fileID: 114394699002868582}
+  - component: {fileID: 58056781231037034}
+  - component: {fileID: 50853040068552246}
   m_Layer: 0
-  m_Name: torpedo
-  m_TagString: enemy
+  m_Name: avela
+  m_TagString: avela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4543229212085152
+--- !u!4 &4253479129267378
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1805017583777250}
+  m_GameObject: {fileID: 1066020854111658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.953438, y: 0.47339457, z: -0.5}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: 14.37, y: -3.79, z: -0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61175202453908318
-BoxCollider2D:
+--- !u!50 &50853040068552246
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1805017583777250}
+  m_GameObject: {fileID: 1066020854111658}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58056781231037034
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066020854111658}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.55, y: 0.9}
-    newSize: {x: 1.55, y: 0.9}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.22380993, y: -0.15025578}
   serializedVersion: 2
-  m_Size: {x: 1.55, y: 0.9}
-  m_EdgeRadius: 0
---- !u!114 &114931775489510256
+  m_Radius: 0.8809408
+--- !u!114 &114394699002868582
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1805017583777250}
+  m_GameObject: {fileID: 1066020854111658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6576d72825ca7641a510d78f4e9b3b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 80216ed1ba2810d48a4dc4ed755c133e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 10
---- !u!212 &212177495572313206
+  vel: 8
+--- !u!212 &212316884057593884
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1805017583777250}
+  m_GameObject: {fileID: 1066020854111658}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -113,12 +124,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5317ba7c29dd57c44af4bd0221ad03c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 782fce22ecad1414ba9833ed3f25bd26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.55, y: 0.9}
+  m_Size: {x: 2.51, y: 2.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

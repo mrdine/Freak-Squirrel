@@ -9,6 +9,7 @@ public class spawnEnemies : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Invoke("spawnTorpedo", 0.5f);
+        Invoke("spawnFlyman", 0.5f);
 	}
 	
 	// Update is called once per frame
@@ -27,5 +28,16 @@ public class spawnEnemies : MonoBehaviour {
 
 
         Invoke("spawnTorpedo", randomTime);
+    }
+
+    private void spawnFlyman()
+    {
+        float randomTime = Random.Range(3, 5);
+
+        Vector3 position = new Vector3(Random.Range(13, 26), Random.Range(-2f, 4f), 0.5f);
+        Instantiate(flyman, position, Quaternion.identity);
+
+
+        Invoke("spawnFlyman", randomTime);
     }
 }
