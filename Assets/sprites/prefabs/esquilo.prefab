@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270197939240978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.58, y: 2.83, z: -0.05}
+  m_LocalPosition: {x: -6.584618, y: 1.5923022, z: -0.05}
   m_LocalScale: {x: 0.23, y: 0.23, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95cf120003ec55e4ba0ecfa3330d47d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 0
   avela: {fileID: 1066020854111658, guid: 26c96aa87c9f09e4980ca976d21227d2, type: 2}
   fireRate: 0.4
 --- !u!212 &212633222522653716
