@@ -45,6 +45,7 @@ public class gameManager : MonoBehaviour {
 
     void gameOver()
     {
+
         pontos = playerScript.pontos;
         gomScript.pontos = pontos;
         gomScript.gameOver = true;

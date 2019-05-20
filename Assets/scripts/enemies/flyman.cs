@@ -26,6 +26,7 @@ public class flyman : MonoBehaviour {
 	void Update () {
 
         target = player.transform;
+        
         moveFlyman();
 
 

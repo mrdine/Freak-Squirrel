@@ -7,9 +7,17 @@ using UnityEngine.SceneManagement;
 public class gameOverMenu : MonoBehaviour {
 
     public int pontos;
-    public bool gameOver = false;
+    public bool gameOver;
     public GameObject gameOverMenuUi;
     public Text Tpontos;
+
+ 
+
+    void Start()
+    {
+        gameOver = false;
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -23,19 +31,20 @@ public class gameOverMenu : MonoBehaviour {
     {
         Tpontos.text = "" + pontos;
         gameOverMenuUi.SetActive(true);
-        Time.timeScale = 0f;
+        
     }
 
     public void tryAgain()
     {
-        Time.timeScale = 1f;
+        gameOver = false;
+        
         //SceneManager.LoadScene("gameplay");
         StartCoroutine(LoadYourAsyncScene("gameplay"));
     }
 
     public void loadGame()
     {
-        Time.timeScale = 1f;
+        gameOver = false;
         //SceneManager.LoadScene("mainMenu");
         StartCoroutine(LoadYourAsyncScene("mainMenu"));
     }
@@ -59,5 +68,6 @@ public class gameOverMenu : MonoBehaviour {
             yield return null;
         }
     }
+
 
 }

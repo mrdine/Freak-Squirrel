@@ -20,7 +20,9 @@ public class player : MonoBehaviour {
     private float nextFire;
 
     //modo de tiro
-    string tiroMode;
+    public string tiroMode;
+
+    Transform alter;
 
     // Use this for initialization
     void Start () {
@@ -28,7 +30,8 @@ public class player : MonoBehaviour {
         vida = 5;
         tiroMode = "padrao";
         pontos = 0;
-	}
+        alter = transform;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -58,6 +61,11 @@ public class player : MonoBehaviour {
 
         //atualiza pontos (Quand um avela acerta um inimigo é somado 1 aos pontos, aqui serve para atualizar no Canvas)
         textCanvas.text = "" + pontos;
+
+        if(vida <=0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void movePlayer()
@@ -92,7 +100,26 @@ public class player : MonoBehaviour {
                 nextFire = Time.time + fireRate;
                 Instantiate(avela, new Vector3(transform.position.x + 0.5f, transform.position.y - 0.25f, transform.position.z), transform.rotation);
             }
-            
+            else if(tiroMode == "avela3mode")
+            {
+                
+                alter.eulerAngles = new Vector3(0, 0, 24f);
+                
+
+                nextFire = Time.time + fireRate;
+
+                Instantiate(avela, new Vector3(transform.position.x + 0.5f, transform.position.y - 0.25f, transform.position.z), alter.rotation);
+
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                
+                Instantiate(avela, new Vector3(transform.position.x + 0.5f, transform.position.y - 0.25f, transform.position.z), transform.rotation);
+
+                alter.eulerAngles = new Vector3(0, 0, -24f);
+
+                Instantiate(avela, new Vector3(transform.position.x + 0.7f, transform.position.y - 0.25f, transform.position.z), alter.rotation);
+
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
         
     }
@@ -104,12 +131,18 @@ public class player : MonoBehaviour {
             vida--;
         }
 
-        else if(other.gameObject.CompareTag("vidaExtra"))
+        if(other.gameObject.CompareTag("vidaExtra"))
         {
             if(vida < 5)
             {
                 vida++;
             }
+        }
+
+        if(other.gameObject.CompareTag("avela3mode"))
+        {
+            fireRate = 0.8f;
+            tiroMode = "avela3mode";
         }
     }
 }
