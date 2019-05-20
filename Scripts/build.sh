@@ -1,6 +1,6 @@
 #! /bin/sh
 
-project="Skim"
+project="Freak-Squirrel"
 
 echo "listing files in $(pwd)"
 ls $(pwd)
@@ -60,10 +60,10 @@ ls $(pwd)/Build/windows
 echo "Listing files in $(pwd)/Build/webgl"
 ls $(pwd)/Build/webgl
 mv $(pwd)/Scripts/templates/index.html $(pwd)/Build/webgl/
-mv $(pwd)/Scripts/templates/skim.json $(pwd)/Build/webgl/Build/
-mv $(pwd)/Build/webgl/Build/.data.unityweb $(pwd)/Build/webgl/Build/skim.data.unityweb
-mv $(pwd)/Build/webgl/Build/.wasm.code.unityweb $(pwd)/Build/webgl/Build/skim.wasm.code.unityweb
-mv $(pwd)/Build/webgl/Build/.wasm.framework.unityweb $(pwd)/Build/webgl/Build/skim.wasm.framework.unityweb
+mv $(pwd)/Scripts/templates/freaksquirrel.json $(pwd)/Build/webgl/Build/
+mv $(pwd)/Build/webgl/Build/.data.unityweb $(pwd)/Build/webgl/Build/freakSquirrel.data.unityweb
+mv $(pwd)/Build/webgl/Build/.wasm.code.unityweb $(pwd)/Build/webgl/Build/freakSquirrel.wasm.code.unityweb
+mv $(pwd)/Build/webgl/Build/.wasm.framework.unityweb $(pwd)/Build/webgl/Build/freakSquirrel.wasm.framework.unityweb
 
 echo 'Attempting to zip builds'
 cd $(pwd)/Build
